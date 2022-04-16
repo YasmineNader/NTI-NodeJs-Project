@@ -1,0 +1,86 @@
+<section class="my-5 ms-5 container ">
+    <h4 class="text-center">Add Products</h4>
+    <form [formGroup]="addProducts" (ngSubmit)="handleAddProducts()" (change)="changePhoto($event)" enctype="multipart/form-data" >
+ 
+    
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" formControlName="name">
+      <div class="alert alert-danger mt-2 w-50 p-1" *ngIf="isSubmitted || (name?.invalid && (name?.dirty || name?.touched))">
+        <ul>
+            <li *ngIf = "name?.errors?.required">Name is Required</li>
+            <li *ngIf = "name?.errors?.minlength">Name Must Be More Than Three Char</li>
+            <li *ngIf = "name?.errors?.maxlength">Name Must Be Less  Or Equal Than 15 Char</li>
+           
+        </ul>
+    </div>
+
+</div>
+    <div class="mb-3 ">
+      <label for="stock" class="form-label">Stock</label>
+      <input type="text" class="form-control" id="stock" formControlName="stock">
+      <div class="alert alert-danger mt-2  w-50 p-1" *ngIf="isSubmitted || (stock?.invalid && (stock?.dirty || stock?.touched))">
+        <ul>
+            <li *ngIf = "stock?.errors?.required">Stock is Required</li>
+            <li *ngIf = "stock?.errors?.minlength">Stock Must Be More Than One Char</li>
+            <li *ngIf = "stock?.errors?.maxlength">Stock Must Be Less Or Equal Three Char</li> 
+            <li *ngIf = "stock?.errors?.pattern">Stock Must Be Numbers Only</li>                   
+                  
+        </ul>
+    </div>
+</div>
+<div class="mb-3 ">
+    <label for="price" class="form-label">Price</label>
+    <input type="text" class="form-control" id="price" formControlName="price">
+    <div class="alert alert-danger mt-2  w-50 p-1" *ngIf="isSubmitted || (price?.invalid && (price?.dirty || price?.touched))">
+      <ul>
+          <li *ngIf = "price?.errors?.required">Price is Required</li>
+          <li *ngIf = "price?.errors?.minlength">Price must be more than 2 chars</li>
+          <li *ngIf = "price?.errors?.maxlength">Price must be less Or Equal than 4 chars</li>  
+          <li *ngIf = "price?.errors?.pattern">Price must be Numbers Only</li>                   
+                 
+      </ul>
+  </div>
+</div>
+   
+<div class="mb-3 ">
+    <label for="brand" class="form-label">Brand</label>
+    <input type="text" class="form-control" id="brand" formControlName="brand">
+    <div class="alert alert-danger mt-2  w-50 p-1" *ngIf="isSubmitted || (brand?.invalid && (brand?.dirty || brand?.touched))">
+      <ul>
+          <li *ngIf = "brand?.errors?.required">Brand is Required</li>
+          <li *ngIf = "brand?.errors?.minlength">Brand must be more than 3 chars</li>
+          <li *ngIf = "brand?.errors?.maxlength">Password must be less than 15 chars</li>   
+          <li *ngIf = "brand?.errors?.pattern">Password must be Letters Only</li>                   
+                
+      </ul>
+  </div>
+</div>
+<div class="mb-3 ">
+    <label for="category" class="form-label">Category</label>
+    <input type="text" class="form-control" id="category" formControlName="category">
+    <div class="alert alert-danger mt-2  w-50 p-1" *ngIf="isSubmitted || (category?.invalid && (category?.dirty || category?.touched))">
+      <ul>
+          <li *ngIf = "category?.errors?.required">Category is Required and the options are (Women,Men Or Kids)</li>
+          <li *ngIf = "category?.errors?.minlength">Category must be more than 3 chars</li>
+          <li *ngIf = "category?.errors?.maxlength">Category must be less than 5 chars</li>
+          <li *ngIf = "category?.errors?.pattern">Category must be Letters Only and the option is (Women,Men Or Kids)</li>                   
+                   
+      </ul>
+  </div>
+</div>
+<div class="mb-3 ">
+    <label for="image" class="form-label">Image</label>
+    <input type="file" class="form-control" id="image" formControlName="image">
+    <div class="alert alert-danger mt-2  w-50 p-1" *ngIf="isSubmitted || (image?.invalid && (image?.dirty || image?.touched))">
+      <ul>
+          <li *ngIf = "image?.errors?.required">Image is Required</li>
+                           
+      </ul>
+  </div>
+</div>
+    <button type="submit" class="btn btn-primary mb-4 me-2" (click)="uploadPhoto()">ADD</button>
+    <button class="btn btn-secondary mb-4" routerLink="/Admin/Home">Back</button>
+
+  </form>
+

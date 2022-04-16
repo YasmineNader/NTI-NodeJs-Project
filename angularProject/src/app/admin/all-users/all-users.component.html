@@ -1,0 +1,29 @@
+<div class="container">
+<table  class="table table-striped table-bordered text-center mt-3">
+    <thead>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Actions</th>
+    
+
+    </thead>
+    <tbody>
+        
+        <tr *ngFor="let user of allUserData">
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phone }}</td>
+            
+        <td>
+                
+                <button class="btn btn-danger" (click)="deleteuser(user._id)">Delete</button>
+               
+            </td>   
+        </tr>
+        
+    </tbody>
+</table>
+<button class="btn btn-secondary mb-3" routerLink="/Admin/Home">Back</button>
+
+</div>

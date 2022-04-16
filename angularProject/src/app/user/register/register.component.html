@@ -1,0 +1,63 @@
+<section class="my-5 ms-5 container ">
+    <h4 class="text-center">User SignUp</h4>
+    <form [formGroup]="uservalues" (ngSubmit)="handleRegisterUser()">
+        <div *ngIf="msg!=null" class="alert alert-primary" >{{ msg.Message|json }}</div>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" formControlName="name">
+            <div class="alert alert-danger mt-2  w-50 p-1"
+                *ngIf="(isSubmitted || (name?.invalid && (name?.dirty || name?.touched)))">
+                <ul>
+                    <li *ngIf="name?.errors?.required">Name is Required</li>
+                    <li *ngIf="name?.errors?.minlength">Name must be more than 3 chars</li>
+                    <li *ngIf="name?.errors?.maxlength">Name must be less than 20 chars</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mb-3  ">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" formControlName="email">
+            <div class="alert alert-danger mt-2 w-50 p-1"
+                *ngIf="isSubmitted || (email?.invalid && (email?.dirty || email?.touched))">
+                <ul>
+                    <li *ngIf="email?.errors?.required">Email is Required</li>
+                    <li *ngIf="email?.errors?.email">Please Enter Valid Email</li>
+
+                </ul>
+            </div>
+
+        </div>
+        <div class="mb-3 ">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" formControlName="password">
+            <div class="alert alert-danger mt-2  w-50 p-1"
+                *ngIf="isSubmitted || (password?.invalid && (password?.dirty || password?.touched))">
+                <ul>
+                    <li *ngIf="password?.errors?.required">password is Required</li>
+                    <li *ngIf="password?.errors?.minlength">Password must be more than 6 chars</li>
+                    <li *ngIf="password?.errors?.maxlength">Password must be less than 10 chars</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mb-3 ">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="text" class="form-control" id="phone" formControlName="phone">
+            <div class="alert alert-danger mt-2  w-50 p-1"
+                *ngIf="isSubmitted || (phone?.invalid && (phone?.dirty || phone?.touched)) ">
+                <ul>
+                    <li *ngIf="phone?.errors?.required">phone is Required</li>
+                    <li *ngIf="phone?.errors?.minlength">phone must be 11 chars</li>
+                    <li *ngIf="phone?.errors?.maxlength">phone must be 11 chars</li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+
+</section>

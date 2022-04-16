@@ -1,0 +1,53 @@
+<div class="container">
+
+    <table class="table table-striped table-bordered text-center mt-3">
+        <thead>
+
+            <th>#ID</th>
+            <th>UserID</th>
+            <th>Products
+
+                <table class="table table-striped table-bordered text-center mt-3">
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Color</th>
+                        <th>Quantity</th>
+                        <th>Amount</th>
+                </table>
+            </th>
+
+            <th>Actions</th>
+
+
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let bill of billsData ">
+                <td>{{ bill._id }}</td>
+                <td>{{ bill.user_id}}</td>
+                <td>
+                  
+                        <tr *ngFor="let product of bill.products ">
+                        <td>{{ product.name}}</td>
+                        <td>{{ product.price}}</td>
+                        <td>{{ product.color}}</td>
+                        <td>{{ product.quantity}}</td>
+                        <td>{{ product.amount}}</td>
+                    </tr>
+                   
+
+                </td>
+
+                <td>
+                   
+                    <button  (click)="delivered(bill._id )" class="btn btn-primary me-2">Deliverd </button>
+                    <button  (click)="cancelled(bill._id )" class="btn btn-warning">Cancelled</button>
+
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <button class="btn btn-secondary mb-3" routerLink="/Admin/Home">Back</button>
+
+</div>

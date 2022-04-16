@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row row-cols-2">
+
+  
+  <div *ngFor="let singleinfo of watchesData">
+
+  
+<div class="card mb-3">
+    <img src="http://localhost:3000/images/{{ singleinfo.image }}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ singleinfo.name }} For {{singleinfo.category }}</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <h6 class="card-title">{{ singleinfo.price }} LE</h6>
+      <a routerLink="/User/AddOrders/{{ singleinfo._id }}" class="btn btn-primary">Order</a>
+
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+

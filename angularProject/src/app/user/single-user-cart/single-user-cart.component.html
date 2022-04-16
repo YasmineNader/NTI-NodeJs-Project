@@ -1,0 +1,54 @@
+<div class="container">
+    <table  class="table table-striped table-bordered text-center mt-3">
+        <thead>
+            <th>Product Number</th>
+            <th>Product Name</th>
+            <th>Product Quantity</th>
+            <th>Product Color</th>
+            <th>Price</th>
+            <th>Category</th>
+
+
+        
+    
+        </thead>
+        <tbody>
+            
+            <tr *ngFor="let order of orderData">
+                <td>{{ order._id }}</td>
+            
+           
+                  
+               
+            
+                <td>{{ order.name }}</td>
+              
+            
+           
+                <td>{{ order.quantity }}</td>
+
+        
+          
+               <td>{{ order.color}}</td>
+
+               <td>{{ order.price}}</td>
+               
+               <td>{{ order.category}}</td>
+           
+       
+
+   
+
+
+                
+                
+            
+                    
+                         
+            </tr>
+            
+        </tbody>
+    </table>
+    <a  class="btn btn-dark mb-3" href="User/cart">Back</a>
+    
+     </div> 

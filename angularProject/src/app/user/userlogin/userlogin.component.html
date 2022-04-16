@@ -1,0 +1,32 @@
+<section class="my-5 ms-5 container ">
+    <h4 class="text-center">User Login</h4>
+    <form [formGroup]="userLoginValues" (ngSubmit)="handleLoginUser()"  >
+    <div *ngIf="msg!=null" class="alert alert-primary" >{{ msg.Message|json }}</div>
+    <div class="mb-3  ">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" formControlName="email">
+      <div class="alert alert-danger mt-2 w-50 p-1" *ngIf="isSubmitted || (email?.invalid && (email?.dirty || email?.touched))">
+        <ul>
+            <li *ngIf = "email?.errors?.required">Email is Required</li>
+            <li *ngIf = "email?.errors?.email">Please Enter Valid Email</li>
+           
+        </ul>
+    </div>
+
+</div>
+    <div class="mb-3 ">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" formControlName="password">
+      <div class="alert alert-danger mt-2  w-50 p-1" *ngIf="isSubmitted || (password?.invalid && (password?.dirty || password?.touched))">
+        <ul>
+            <li *ngIf = "password?.errors?.required">password is Required</li>
+            <li *ngIf = "password?.errors?.minlength">Password must be more than 6 chars</li>
+            <li *ngIf = "password?.errors?.maxlength">Password must be less than 10 chars</li>                   
+        </ul>
+    </div>
+</div>
+
+   
+    
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>

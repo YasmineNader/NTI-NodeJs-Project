@@ -1,0 +1,5 @@
+<app-navbar-admin *ngIf="getsession.type=='Admin'"></app-navbar-admin>
+<app-navbar *ngIf="getsession.type ==undefined" ></app-navbar> 
+<app-navbar-user *ngIf="getsession.type=='User'"></app-navbar-user>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

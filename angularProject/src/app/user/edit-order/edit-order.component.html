@@ -1,0 +1,79 @@
+<section class="my-5 ms-5 container ">
+    <h4 class="text-center">Edit Order</h4>
+    <form [formGroup]="editOrder" (ngSubmit)="EditOrder()"  enctype="multipart/form-data" >
+ 
+        <fieldset disabled>
+    <div class="mb-3">
+      <label for="name" class="form-label">Product Name</label>
+      <input type="text" class="form-control" formControlName="name" >
+      <!-- <div class="alert alert-danger mt-2 w-50 p-1" *ngIf="isSubmitted || (name?.invalid && (name?.dirty || name?.touched))">
+        <ul>
+            <li *ngIf = "name?.errors?.required">Name is Required</li>
+            <li *ngIf = "name?.errors?.minlength">Name Must Be More Than Three Char</li>
+            <li *ngIf = "name?.errors?.maxlength">Name Must Be Less  Or Equal Than 15 Char</li>
+           
+        </ul>
+    </div> -->
+
+</div>
+<div class="mb-3">
+    <label for="price" class="form-label">Price</label>
+    <input type="text" class="form-control" formControlName="price" >
+    <!-- <div class="alert alert-danger mt-2 w-50 p-1" *ngIf="isSubmitted || (name?.invalid && (name?.dirty || name?.touched))">
+      <ul>
+          <li *ngIf = "name?.errors?.required">Name is Required</li>
+          <li *ngIf = "name?.errors?.minlength">Name Must Be More Than Three Char</li>
+          <li *ngIf = "name?.errors?.maxlength">Name Must Be Less  Or Equal Than 15 Char</li>
+         
+      </ul>
+  </div> -->
+
+</div>
+   
+<div class="mb-3 ">
+    <label for="category" class="form-label">Category</label>
+    <input type="text" class="form-control" id="category" formControlName="category" >
+    <!-- <div class="alert alert-danger mt-2  w-50 p-1" *ngIf="isSubmitted || (price?.invalid && (price?.dirty || price?.touched))">
+      <ul>
+          <li *ngIf = "price?.errors?.required">Price is Required</li>
+          <li *ngIf = "price?.errors?.minlength">Price must be more than 2 chars</li>
+          <li *ngIf = "price?.errors?.maxlength">Price must be less Or Equal than 4 chars</li>  
+          <li *ngIf = "price?.errors?.pattern">Price must be Numbers Only</li>                   
+                 
+      </ul>
+  </div> -->
+</div>
+   
+
+</fieldset>
+<div class="mb-3 ">
+    <label for="brand" class="form-label">Quantity</label>
+    <input type="text" class="form-control" id="brand" formControlName="quantity" >
+    <div class="alert alert-danger mt-2  w-50 p-1" *ngIf="isSubmitted || (quantity?.invalid && (quantity?.dirty || quantity?.touched))">
+      <ul>
+          <li *ngIf = "quantity?.errors?.required">Quantity is Required</li>
+          <li *ngIf = "quantity?.errors?.minlength">Quantity must be more than 3 chars</li>
+          <li *ngIf = "quantity?.errors?.maxlength">Quantity must be less than 15 chars</li>   
+          <li *ngIf = "quantity?.errors?.pattern">Quantity must be Numbers Only</li>                   
+                
+      </ul>
+  </div>
+</div>
+
+<div class="mb-3 ">
+    <label for="color" class="form-label">Color</label>
+    <input type="text" class="form-control" id="color" formControlName="color">
+    <div class="alert alert-danger mt-2  w-50 p-1" *ngIf="isSubmitted || (color?.invalid && (color?.dirty || color?.touched))">
+      <ul>
+          <li *ngIf = "color?.errors?.required">Color is Required</li>
+          <li *ngIf = "color?.errors?.minlength">Color must be more than 3 chars</li>
+          <li *ngIf = "color?.errors?.maxlength">Color must be less than 5 chars</li>
+          <li *ngIf = "color?.errors?.pattern">Color must be Letters Only</li>                   
+                   
+      </ul>
+  </div>
+</div>
+
+
+    <button type="submit" class="btn btn-primary mb-4">Update</button>
+  </form>

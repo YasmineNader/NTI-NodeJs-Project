@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand ">Watches</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="Admin/Home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Admin/AddProducts">Add Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Admin/ShowAllProducts">All Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Admin/ShowAllUser">All Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Admin/UserBills">Users Bills</a>
+          </li>
+        </ul>
+        
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link ms-auto">{{ getsession.Name }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link ms-auto" (click)='logOutAdmin()'>LogOut</a>
+          </li>
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
